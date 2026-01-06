@@ -1,0 +1,14 @@
+<ion-list>
+  <ion-item *ngFor="let cita of citas">
+    <ion-label>
+      <h3>"{{ cita.frase }}"</h3>
+      <p>- {{ cita.autor }}</p>
+    </ion-label>
+    <ion-button fill="clear" color="danger" slot="end" (click)="onEliminar(cita.id)">
+      <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <ion-item *ngIf="citas.length === 0">
+    <ion-label>No hay citas disponibles</ion-label>
+  </ion-item>
+</ion-list>

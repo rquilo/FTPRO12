@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Cita Aleatoria</h2>
+
+  @if (citaAleatoria) {
+    <app-cita-card
+      [cita]="citaAleatoria"
+      [mostrarBotonEliminar]="mostrarBotonEliminar"
+      (eliminar)="onEliminarCita($event)">
+    </app-cita-card>
+
+    <ion-button expand="block" fill="outline" (click)="cargarCitaAleatoria()">
+      <ion-icon slot="start" name="refresh-outline"></ion-icon>
+      Nueva Cita
+    </ion-button>
+  } @else {
+    <p>No hay citas disponibles.</p>
+  }
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" fill="clear" routerLink="/configuracion">
+            <ion-icon slot="start" name="settings-outline"></ion-icon>
+            Configuración
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" fill="clear" routerLink="/citas">
+            <ion-icon slot="start" name="list-outline"></ion-icon>
+            Citas
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

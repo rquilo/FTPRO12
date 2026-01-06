@@ -1,0 +1,33 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <ion-item>
+    <ion-input
+      label="Frase"
+      labelPlacement="floating"
+      formControlName="frase"
+      placeholder="Ingrese la frase">
+    </ion-input>
+  </ion-item>
+  @if (fraseInvalida) {
+    <ion-text color="danger">
+      <p class="error-message">La frase es requerida y debe tener al menos 5 caracteres.</p>
+    </ion-text>
+  }
+
+  <ion-item>
+    <ion-input
+      label="Autor"
+      labelPlacement="floating"
+      formControlName="autor"
+      placeholder="Ingrese el autor">
+    </ion-input>
+  </ion-item>
+  @if (autorInvalido) {
+    <ion-text color="danger">
+      <p class="error-message">El autor es requerido y debe tener al menos 2 caracteres.</p>
+    </ion-text>
+  }
+
+  <ion-button expand="block" type="submit" [disabled]="formulario.invalid">
+    Agregar Cita
+  </ion-button>
+</form>

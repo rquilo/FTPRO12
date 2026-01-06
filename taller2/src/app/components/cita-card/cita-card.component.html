@@ -1,0 +1,13 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle>{{ cita.autor }}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <p>"{{ cita.frase }}"</p>
+    @if (mostrarBotonEliminar) {
+      <ion-button color="danger" fill="clear" (click)="onEliminar()">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    }
+  </ion-card-content>
+</ion-card>
